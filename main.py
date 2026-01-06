@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
 
@@ -9,8 +10,8 @@ def health():
 
 class Roupa(BaseModel):
     tipo: str
-    cor: str
-    tecido: str
+    cor: Optional[str] = None
+    tecido: Optional[str] = None
 
 class Avaliacao(BaseModel):
     score: float
