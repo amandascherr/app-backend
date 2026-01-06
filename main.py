@@ -9,8 +9,8 @@ def health():
     return {"status": "ok"}
 
 class Roupa(BaseModel):
-    tipo: str
-    cor: Optional[str] = None
+    cor: str
+    tipo: Optional[str] = None
     tecido: Optional[str] = None
 
 class Avaliacao(BaseModel):
@@ -28,5 +28,5 @@ def avaliar(r1: Roupa, r2: Roupa):
 
     return Avaliacao(
         score=score,
-        explicacao=f"Score calculado com base em cor e tecido"
+        explicacao=f"Score calculado com base em cor"
     )
